@@ -11,6 +11,7 @@ LLM-TKESS consists of two training stages:
 ### Stage 1: LLM-SS Alignment Phase
 
 Autoregressive parameter-efficient fine-tuning (PEFT) is employed to align industrial process variables with the semantic space of large language models, producing a soft sensing foundation model named **LLM-SS**.
+**Training Configuration (Stage 1):**
 ```bash
 --model_id GPT4Indpensim \
 --model LLM_TKESS \
@@ -37,6 +38,7 @@ Autoregressive parameter-efficient fine-tuning (PEFT) is employed to align indus
 --itr 1 \
 --tmax 20 \
 --cos 1
+```
 ### Stage 2: Downstream Soft Sensing Adaptation
 
 Two downstream soft sensing paradigms are developed based on lightweight adapter tuning:
