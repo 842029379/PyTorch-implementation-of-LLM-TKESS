@@ -48,3 +48,47 @@ Two downstream soft sensing paradigms are developed based on lightweight adapter
 
 - **LLM-PDSS**
   - Prompt and Data Mixed Embedding-driven Soft Sensor
+## Training Configuration (Stage 2)
+
+```bash
+--model_id LLM_TKESS \
+--model LLM_TKESS \
+--is_gpt 1 \
+--init_checkpoint ./checkpoints/Step1Checkpoints/ \
+--data_path IndPensim.csv \
+--target OT \
+\
+--seq_len 96 \
+--label_len 168 \
+--pred_len 1 \
+\
+--batch_size 64 \
+--learning_rate 0.0001 \
+--train_epochs 30 \
+--lradj type4 \
+--decay_fac 0.5 \
+\
+--d_model 768 \
+--d_ff 768 \
+--n_heads 4 \
+--dropout 0.3 \
+\
+--enc_in 7 \
+--c_out 1 \
+\
+--gpt_layer 6 \
+--adapter_layer 6 \
+--adapter_dropout 0.1 \
+\
+--patch_size 1 \
+--stride 1 \
+\
+--lora_dim 4 \
+--lora_alpha 32 \
+--lora_dropout 0.1 \
+\
+--freq 0 \
+--percent 100 \
+--itr 5 \
+--tmax 20 \
+--cos 1
